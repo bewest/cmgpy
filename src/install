@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -rf /usr/lib/python2.7/pymodem/
+cp -r pymodem /usr/lib/python2.7/pymodem
