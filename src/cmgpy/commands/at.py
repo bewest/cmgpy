@@ -217,11 +217,11 @@ class cmgl(OptionsATCommand, QueryableATCommand):
         # SMS debugging something downstream that depends on this   #
         #                                                           #
         #                                                           #
-        if self.debug:
-        	response.messageList.append({'cmgl':18,                     #
-        	                        'stat':'REC UNREAD',                #
-        	                        'da':'1410000005',                  #
-        	                        'message':'FRM:Nathan West\nSUBJ:conf\nMSG:STR http://commlablaptop.ceat.okstate.edu/index.html\n'})
+        # if self.debug:
+        # 	response.messageList.append({'cmgl':18,                     #
+        # 	                        'stat':'REC UNREAD',                #
+        # 	                        'da':'1410000005',                  #
+        # 	                        'message':'FRM:Nathan West\nSUBJ:conf\nMSG:STR http://commlablaptop.ceat.okstate.edu/index.html\n'})
         #                                                           #
         #                                                           #
         #############################################################
@@ -229,7 +229,7 @@ class cmgl(OptionsATCommand, QueryableATCommand):
 
         return response
 
-class gmgd(OptionsATCommand):
+class cmgd(OptionsATCommand):
     '''
     Delete SMS
     AT+CMGD=<index>[,<flag>]

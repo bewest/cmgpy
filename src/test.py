@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
-import pymodem
+import cmgpy
 import logging
-at = pymodem.commands.at
+at = cmgpy.commands.at
 
 logging.basicConfig(level='DEBUG')
-icon322 = pymodem.Modem('/dev/ttyHS0', 115200)
+icon322 = cmgpy.Modem('/dev/ttyHS0', 115200)
 
 # # test 1
 # result1 = icon322.AT('AT')
@@ -29,7 +29,7 @@ icon322 = pymodem.Modem('/dev/ttyHS0', 115200)
 # assert result.rval == 1, 'TEST 5 FAILED'
 
 # comment out to avoid wasting messages
-#result = icon322.AT(at.cmgs(da="+19082165058", msg="Test from pymodem"))
+#result = icon322.AT(at.cmgs(da="+19082165058", msg="Test from cmgpy"))
 
 result = icon322.AT(at.cmgl(stat="REC UNREAD"))
 messages = result.messageList
@@ -42,3 +42,5 @@ print result.text
 
 result = icon322.AT(at.cmgr(index=4))
 print result.message
+
+result = icon322.AT(at.cmgd(index=0, flag=4)) # delete all sms
